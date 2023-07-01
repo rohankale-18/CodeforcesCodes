@@ -12,35 +12,43 @@ int32_t main(){
     while(t--){
        int n,k,x;
        cin>>n>>k>>x;
-       vector<int> v;
-       while(n>=0){
-        n=n-k;
-        if(n>=k){
-            // cout<<k<<endl;
-            v.push_back(k);
-        }
-        else{
-            if(k!=1){
-                int y=k-1;
-                if(y==x){
-                    y-=1;
-                    k=y;
-                }
-            }
-        }
-
-       }
-       int sum;
-       sum=accumulate(v.begin(),v.end(),0);
-       cout<<sum<<endl;
-       if(sum==n){
+       if(x!=1){
         cout<<"YES"<<endl;
-        for(int i=0;i<v.size();i++){
-            cout<<v[i]<<" ";
+        cout<<n<<endl;
+        for(int i=0;i<n;i++){
+            cout<<1<<" ";
         }cout<<endl;
        }
-       else{
+       else if(k==1){
         cout<<"NO"<<endl;
+       }
+       else if(k==2){
+        if(n%2==0){
+            cout<<"YES"<<endl;
+            cout<<n/2<<endl;
+            for(int i=0;i<n/2;i++){
+                cout<<2<<" ";
+            }cout<<endl;
+        }
+        else{
+            cout<<"NO"<<endl;
+        }
+       }
+       else{
+            cout<<"YES"<<endl;
+        if(n%2==0){
+            cout<<n/2<<endl;
+            for(int i=0;i<n/2;i++){
+                cout<<2<<" ";
+            }
+        }
+        else{
+            cout<<(n-1)/2<<endl;
+            cout<<3<<" ";
+            for(int i=0;i<(n-3)/2;i++){
+                cout<<2<<" ";
+            }
+        }
        }
     }
     return 0;
