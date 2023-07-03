@@ -10,19 +10,23 @@ int32_t main(){
     int t;
     cin>>t;
     while(t--){
-       int n,ans=1,curr=1;
        string s;
-       cin>>n>>s;
-       for(int i=0;i<s.size()-1;i++){
-        if(s[i]!=s[i+1]){
-            curr=1;
-        }
-        else{
-            curr++;
-        }
-        ans=max(ans,curr);
+       cin>>s;
+       if(s[0]=='?'){
+        s[0]='0';
        }
-       cout<<ans+1<<endl;
+       if(s[s.size()-1]=='?'){
+        s[s.size()-1]='1';
+       }
+       for(int i=0;i<s.size()-1;i++){
+        if(s[i]=='0' && s[i+1]=='?'){
+            s[i+1]='0';
+        }
+        else if(s[i]=='1' && s[i+1]=='?'){
+            s[i+1]='1';
+        }
+       }
+       cout<<s<<endl;
     }
     return 0;
 }

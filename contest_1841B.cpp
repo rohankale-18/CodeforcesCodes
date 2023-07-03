@@ -10,45 +10,41 @@ int32_t main(){
     int t;
     cin>>t;
     while(t--){
-       int q,first,second;
+       int q,first,last,x;
+       bool flag=false;
        cin>>q;
-       vector<int> v;
-       for(int i=0;i<q;i++){
-        int x;
+       vector<int> ans(q);
+       cin>>first;
+       last=first;
+       ans[0]=1;
+       for(int i=1;i<q;i++){
         cin>>x;
-        v.push_back(x);
-       }
-       if(q==1){
-        cout<<1;
-       }else{
-        first=v[0];
-        second=v[1];
-        cout<<11;
-       }
-       for(int i=2;i<q;i++){
-        if(first<=second){
-            if(v[i]>=second){
-                cout<<1;
-                second=v[i];
-            }
-            else if(v[i]<=first){
-                cout<<1;
-                first=v[i];
+        if(flag){
+            if(last<=x && x<=first){
+                ans[i]=1;
+                last=x;
             }
             else{
-                cout<<0;
+                ans[i]=0;
             }
         }
         else{
-            //second<first
-            if(v[i]<=second && v[i]>=first){
-                cout<<1;
-                if(v[i])
+            if(last <= x){
+                ans[i]=1;
+                last=x;
+            }
+            else if(x<=first){
+                ans[i]=1;
+                last=x;
+                flag=1;
             }
             else{
-                cout<<0;
+                ans[i]=0;
             }
         }
+       }
+       for(int i=0;i<q;i++){
+        cout<<ans[i];
        }cout<<endl;
     }
     return 0;
