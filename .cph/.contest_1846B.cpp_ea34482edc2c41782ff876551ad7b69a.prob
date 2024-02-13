@@ -1,0 +1,1 @@
+{"name":"Local: contest_1846B","url":"e:\\Contests and Practice\\Codeforces\\contest_1846B.cpp","tests":[{"id":1688743392873,"input":"5\n+X+\nOXO\nOX.\nO+.\n+OX\nX+O\n.XO\nOX.\n+++\nO.+\nX.O\n+..\n.++\nX.O\n+..","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Contests and Practice\\Codeforces\\contest_1846B.cpp","group":"local","local":true}

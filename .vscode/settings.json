@@ -4,5 +4,6 @@
         "cmath": "cpp",
         "iosfwd": "cpp"
     },
-    "cph.general.onceMaintainerMessage": false
+    "cph.general.onceMaintainerMessage": false,
+    "editor.fontFamily": "'IBM Plex Mono',Consolas, 'Courier New', monospace"
 }

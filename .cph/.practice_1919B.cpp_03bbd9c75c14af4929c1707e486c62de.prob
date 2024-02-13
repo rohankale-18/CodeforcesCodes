@@ -1,0 +1,1 @@
+{"name":"Local: practice_1919B","url":"e:\\Contests and Practice\\Codeforces\\practice_1919B.cpp","tests":[{"id":1704562062844,"input":"5\n1\n+\n5\n-----\n6\n+-+-+-\n10\n--+++++++-\n20\n+---++++-+++++---++-\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"e:\\Contests and Practice\\Codeforces\\practice_1919B.cpp","group":"local","local":true}

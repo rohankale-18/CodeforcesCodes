@@ -12,26 +12,22 @@ int32_t main(){
     while(t--){
        int n,k,d,w;
        cin>>n>>k>>d>>w;
-       vector<int> v(n,INT_MAX);
+       vector<int> v(n);
        for(int i=0;i<n;i++){
         cin>>v[i];
        }
-       int x=v[0],cnt=0,size=0;
+       int when=-1,ans=0,cnt=0;
        for(int i=0;i<n;i++){
-        if(x+w>=v[i]-d){
-            size++;
-            if(k==size){
-                int a=i;
-                cnt++;
-                size=0;
-                x=v[a+1];
-            }
+        if(v[i]<=when+d && cnt>0){
+            cnt-=1;
         }
-       }  
-       if(size>0){
-        cnt++;
-       }     
-       cout<<cnt<<endl;
+        else{
+            when=v[i]+w;
+            cnt=k-1;
+            ans+=1;
+        }
+       } 
+       cout<<ans<<endl;
     }
     return 0;
 }
